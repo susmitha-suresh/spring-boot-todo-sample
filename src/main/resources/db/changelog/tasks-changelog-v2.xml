@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="2022040814135300-1" author="liquibase">
+        <createTable tableName="tasks">
+            <column name="id" type="BINARY(16)">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+            <column name="task_name" type="varchar(255)" />
+            <column name="status" type="varchar(255)" />
+            <column name="has_completed" type="boolean" />
+            <column name="user_details_id" type="datetime" />
+            <column name="created_date" type="datetime" />
+            <column name="modified_date" type="datetime" />
+            <column name="is_active" type="boolean" />
+        </createTable>
+        <addForeignKeyConstraint baseColumnNames="user_details_id"
+                                 baseTableName="tasks"
+                                 constraintName="users_task_fk"
+                                 onDelete="CASCADE"
+                                 onUpdate="CASCADE"
+                                 referencedColumnNames="id"
+                                 referencedTableName="user_details" />
+    </changeSet>
+
+
+</databaseChangeLog>
