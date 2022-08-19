@@ -7,7 +7,7 @@
 
     <changeSet id="2022040814135300-1" author="liquibase">
         <createTable tableName="tasks">
-            <column name="id" type="BINARY(16)">
+            <column name="id" type="integer">
                 <constraints primaryKey="true" nullable="false" />
             </column>
             <column name="task_name" type="varchar(255)" />

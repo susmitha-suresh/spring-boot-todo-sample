@@ -10,18 +10,15 @@ import java.time.ZonedDateTime;
 import java.util.List;
 
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
-@ToString
 @Entity
 public class Tasks {
     @Id
     @GeneratedValue
-    private int id;
+    private Integer id;
     private String taskName;
     private String status;
     private Boolean hasCompleted;
     @ManyToOne(targetEntity = UserDetails.class,cascade = CascadeType.ALL)
     @JoinColumn(name ="users_task_fk",referencedColumnName = "id")
-    private List<UserDetails> userDetailsId;
+    private List<UserDetails> userDetails;
 }

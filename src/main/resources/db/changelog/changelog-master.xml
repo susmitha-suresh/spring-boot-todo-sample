@@ -7,4 +7,5 @@
 
     <include file="classpath:db/changelog/changelog-v1.xml"/>
     <include file="classpath:db/changelog/userdetails-changelog-v2.xml"/>
+    <include file="classpath:db/changelog/tasks-changelog-v2.xml"/>
 </databaseChangeLog>
